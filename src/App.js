@@ -6,14 +6,15 @@ const App = _ => {
 
   const [expenses, setExpenses] = useState([])
 
+  // REACT OLD WAY TO CREATE ELEMENTS.
   // return React.createElement(
   //   'div',{},
   //   React.createElement('h2',{},"let's get started!"),
   //   React.createElement(Expenses,{expenses:expenses})
   // );
 
-  const addExpenseHandler = (newItem) => {
-    setExpenses([...expenses,newItem])
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses)=>([expense,...prevExpenses]))
   }
   
   return (
